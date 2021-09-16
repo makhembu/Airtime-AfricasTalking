@@ -1,5 +1,7 @@
 # Airtime-Africas Talking
 This is a simple python script to send airtime
+### Getting Started
+The First part would be to fill the xyz_emloyees.csv with phone numbers in international format
 ### Prerequisites
 - Python and pip Any version above 3.5 should work.
 - An [Africas Talking account](https://account.africastalking.com/auth/register/).
