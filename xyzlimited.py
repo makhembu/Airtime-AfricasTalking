@@ -24,7 +24,7 @@ def format_international():
         num = re.sub("[^0-9]", "", num) #regex to extract digits in the phone number string 
         x=num.startswith('254') #checks number prefix
         y =num.startswith('0')  #checks number prefix
-        z = num.startswith('7')  #checks number prefix
+        z = num.startswith('7') or num.startswith('1')  #checks number prefix
 
         if x is True:   #validates  xprefix condition
             form = '+' + num    #adds a + prefix to the number
@@ -58,10 +58,13 @@ def clean_amount():
     for i in airtime_amount:
         regex = '[+-]?[0-9]+\.[0-9]+' # regex to check for floats
         if (re.search(regex, i)):   #check if float condition is True
+            regex = '[^0-9][^.]' #removes any character that's not a digit or a decimal point
+            i = re.sub("[^0-9.]", "", i)
             formatted_airtime_amount.append(i)  #appends amount to list
         else:
             i =  re.sub("[^0-9]", "", i)    #if number is not a float, extract only digits
             formatted_airtime_amount.append(i)
+
 
 clean_amount()  #call function
 
