@@ -11,7 +11,7 @@ airtime_amount = [] #list to collect airtime amount from csv
 formatted_number = [] #list to store formatted format numbers
 formatted_airtime_amount = [] #list to store cleaned up amount 
 
-# Reading csv data into the lists above
+# wrting csv data into the lists above
 with open('xyz_employees.csv', 'r') as csv_file:
     reader = csv.DictReader(csv_file, delimiter=',') # using dict reader because csv has columns
     for lines in reader:
